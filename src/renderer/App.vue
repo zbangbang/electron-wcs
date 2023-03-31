@@ -1,34 +1,21 @@
 <template>
-  <div id="app">
-    <div class="btnBox">
-      <button @click="send()">点击</button>
-      <img :src="testImg" alt="" />
-    </div>
-    <router-view></router-view>
+  <div id="wcs-app">
+    <wcs-iframe></wcs-iframe>
   </div>
 </template>
 
 <script>
-import { CaptureImage } from './utils/capture.js'
-const electron = require('electron')
-const ipc = electron.ipcRenderer
-ipc.on('capture', (e, data) => {
-  console.log(e, data)
-})
+import WcsIframe from '@/components/WcsIframe/index.vue'
 export default {
   name: 'electron-wcs',
-  data() {
-    return {
-      testImg: null
-    }
+  components: {
+    WcsIframe
   },
-  methods: {
-    send() {
-      CaptureImage().then(res => {
-        this.testImg = res
-      })
-    }
-  }
+  data() {
+    return {}
+  },
+  mounted() {},
+  methods: {}
 }
 </script>
 
