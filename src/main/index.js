@@ -1,6 +1,7 @@
 import { app, BrowserWindow, globalShortcut, ipcMain } from 'electron'
 import '../renderer/store'
 import axios from 'axios'
+const path = require('path')
 import { CreateMenu } from './menu/index.js'
 import { RegisterEvent } from './event/register.js'
 
@@ -9,9 +10,7 @@ import { RegisterEvent } from './event/register.js'
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
  */
 if (process.env.NODE_ENV !== 'development') {
-  global.__static = require('path')
-    .join(__dirname, '/static')
-    .replace(/\\/g, '\\\\')
+  global.__static = path.join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
 
 let mainWindow
@@ -35,7 +34,8 @@ function createWindow() {
       nodeIntegration: true, //在网页中集成Node
       enableRemoteModule: true // 打开remote模块
     },
-    fullscreen: true
+    fullscreen: true,
+    icon: path.join(__dirname, '/static/images/weather.ico')
   })
 
   CreateMenu()

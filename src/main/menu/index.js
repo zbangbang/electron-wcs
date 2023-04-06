@@ -7,13 +7,25 @@ import {
 
 const template = [
   {
-    label: '文件',
+    label: '菜单',
     submenu: [
+      // {
+      //   label: '打开文件',
+      //   click() {
+      //     console.log('打开文件')
+      //   }
+      // },
       {
-        label: '打开文件',
+        label: '显示/隐藏',
+        accelerator: 'alt+s',
         click() {
-          console.log('打开文件')
+          let mainWindow = BrowserWindow.getFocusedWindow()
+          changeMenuShow(mainWindow)
         }
+      },
+      {
+        label: '重新加载',
+        role: 'reload'
       },
       {
         type: 'separator'
@@ -29,13 +41,14 @@ const template = [
     ]
   },
   {
-    label: '快捷键',
+    label: '功能键',
     submenu: [
       {
         label: '截图',
         accelerator: 'shift+a',
         click() {
-          captureImage()
+          let mainWindow = BrowserWindow.getFocusedWindow()
+          mainWindow.webContents.send('screen-shot', 1)
         }
       },
       {
@@ -47,46 +60,8 @@ const template = [
         }
       },
       {
-        label: '菜单显示/隐藏',
-        accelerator: 'alt+s',
-        click() {
-          let mainWindow = BrowserWindow.getFocusedWindow()
-          changeMenuShow(mainWindow)
-        }
-      }
-    ]
-  },
-  {
-    label: '角色',
-    submenu: [
-      { label: '复制', role: 'copy' },
-      { label: '剪切', role: 'cut' },
-      { label: '粘贴', role: 'paste' },
-      { label: '最小化', role: 'minimize' }
-    ]
-  },
-  {
-    label: '类型',
-    submenu: [
-      { label: '选项1', type: 'checkbox' },
-      { label: '选项2', type: 'checkbox' },
-      { label: '选项3', type: 'checkbox' },
-      { type: 'separator' },
-      { label: 'item1', type: 'radio' },
-      { label: 'item2', type: 'radio' },
-      { type: 'separator' },
-      { label: 'windows', type: 'submenu', role: 'windowMenu' }
-    ]
-  },
-  {
-    label: '其它',
-    submenu: [
-      {
-        label: '打开',
-        accelerator: 'ctrl + o',
-        click() {
-          console.log('open操作执行了')
-        }
+        label: '最小化',
+        role: 'minimize'
       }
     ]
   }

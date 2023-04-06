@@ -1,9 +1,9 @@
 {
   "name": "electron-wcs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "zbangbang",
   "description": "An electron-vue project",
-  "license": null,
+  "license": "",
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
@@ -44,7 +44,7 @@
       "icon": "build/icons/icon.icns"
     },
     "win": {
-      "icon": "build/icons/icon.ico"
+      "icon": "build/icons/weather.ico"
     },
     "linux": {
       "icon": "build/icons"
