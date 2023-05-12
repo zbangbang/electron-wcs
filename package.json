@@ -44,19 +44,33 @@
       "icon": "build/icons/icon.icns"
     },
     "win": {
-      "icon": "build/icons/weather.ico"
+      "icon": "build/icons/logo.ico"
     },
     "linux": {
       "icon": "build/icons"
     },
     "asar": true,
-    "extraResources": [{
-      "from": "static/capture",
-      "to": "../capture"
-    }]
+    "extraResources": [
+      {
+        "from": "static/capture",
+        "to": "../capture"
+      },
+      {
+        "from": "static/tabtip",
+        "to": "../tabtip"
+      },
+      {
+        "from": "static/pdf",
+        "to": "../pdf"
+      }
+    ]
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "dayjs": "^1.11.7",
+    "electron-pdf-window": "^1.0.12",
+    "element-ui": "^2.15.13",
+    "nprogress": "^0.2.0",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",

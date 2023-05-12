@@ -1,4 +1,4 @@
-import { CaptureImage } from '../capture.js'
+import { CaptureImage } from '../utils/capture.js'
 // 切换全屏状态
 export function changeFullScreen(mainWindow) {
   if (mainWindow.isFullScreen()) {

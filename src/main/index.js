@@ -4,6 +4,7 @@ import axios from 'axios'
 const path = require('path')
 import { CreateMenu } from './menu/index.js'
 import { RegisterEvent } from './event/register.js'
+import { initDownload } from './utils/download.js'
 
 /**
  * Set `__static` path to static files in production
@@ -51,6 +52,7 @@ function createWindow() {
   })
 
   RegisterEvent(mainWindow)
+  initDownload(mainWindow)
 }
 
 app.on('ready', () => {
