@@ -38,7 +38,9 @@ const template = [
           // helpPdfWin.setSkipTaskbar(true)
 
           // win.loadURL(require('path').join(__static, '/pdf/123.pdf'))
-          helpPdfWin.loadURL(require('path').join(__static, '/pdf/123.pdf'))
+          helpPdfWin.loadURL(
+            require('path').join(__static, '/pdf/帮助手册.pdf')
+          )
         }
       },
       {
@@ -63,7 +65,9 @@ const template = [
           // usePdfWin.setSkipTaskbar(true)
 
           // win.loadURL(require('path').join(__static, '/pdf/123.pdf'))
-          usePdfWin.loadURL(require('path').join(__static, '/pdf/123.pdf'))
+          usePdfWin.loadURL(
+            require('path').join(__static, '/pdf/使用说明书.pdf')
+          )
         }
       },
       {

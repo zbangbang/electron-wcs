@@ -15,8 +15,8 @@ const messageDuration = 5 * 1000
 // 系统全局请求对象
 const service = axios.create({
   // baseURL: process.env.VUE_APP_BASE_API,
-  // baseURL: 'http://192.168.2.14:8088/wcs/',
-  baseURL: 'http://127.0.0.1:8088/wcs/',
+  baseURL: 'http://192.168.2.14:8088/wcs/',
+  // baseURL: 'http://127.0.0.1:8088/wcs/',
   timeout: requestTimeOut,
   responseType: 'json',
   validateStatus(status) {

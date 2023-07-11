@@ -74,7 +74,7 @@ export default {
   data() {
     return {
       url: 'http://127.0.0.1:9033/',
-      // url: 'http://192.168.2.55:9033/',
+      // url: 'http://192.168.2.55:9527/',
 
       // 拍照对话框
       dialogVideoVisible: false,
@@ -137,8 +137,8 @@ export default {
       if (data.type === 'tabtip') {
         console.log('-=-=-=-==-=-=-=-=-888888')
         // Tabtip()
-        this.openKeyBord()
-        // this.showTouchKeyboard()
+        // this.openKeyBord()
+        this.showTouchKeyboard()
       }
       // 下载文件
       if (data.type === 'download') {
@@ -164,7 +164,6 @@ export default {
         'start "C:\\Program Files\\Common Files\\microsoft shared\\ink" TabTip.exe',
         (error, stdout, stderr) => {
           if (error) {
-            alert(error, stdout, stderr)
             console.log(error, stdout, stderr)
           }
         }
@@ -268,7 +267,7 @@ export default {
         .then(res => {
           if (res.data.code == 200) {
             this.$message({
-              message: '数据扫描中',
+              message: '数据扫描成功',
               type: 'success'
             })
           } else {
